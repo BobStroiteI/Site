@@ -1,0 +1,290 @@
+
+.scene {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+.ground {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 30px;
+  background: repeating-linear-gradient(
+    90deg,
+    #fbc02d 0 10px,
+    #ffe082 10px 20px
+  );
+}
+
+.grass {
+  position: absolute;
+  width: 20px;
+  height: 40px;
+  bottom: 26px;
+  border-radius: 100%;
+  border-left: 3px solid #8bc34a;
+  background-color: transparent;
+  
+}
+
+.grass--1 { left: 150px; height: 34px;}
+.grass--2 { left: 150px; height: 44px; transform: scaleX(-1) rotate(10deg); }
+.grass--3 { left: 180px; height: 30px; }
+
+/* Динозавррр */
+.dino {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 200px;
+  height: 200px;
+}
+
+.dino-tail {
+  position: absolute;
+  bottom: 70px;
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  border-left: 30px solid #8bc34a;
+  background-color: transparent;
+}
+
+.dino-body {
+  position: absolute;
+  width: 88px;
+  height: 68px;
+  left: 30px;
+  top: 88px;
+  background: #8bc34a;
+border-radius: 50%;
+  z-index: 2;
+}
+
+.dino-belly {
+  position: absolute;
+  width: 48px;
+  height: 38px;
+  left: 45px;
+  top: 108px;
+  background: #dcedc8;
+  border-radius: 50%;
+  z-index: 3;
+}
+
+.dino-leg-left,
+.dino-leg-right {
+  position: absolute;
+  width: 18px;
+  height: 34px;
+  background: #8bc34a;
+  border-radius: 8px;
+  top: 138px;
+  z-index: 1;
+}
+
+.dino-leg-left { left: 48px; }
+.dino-leg-right { left: 80px; }
+
+.dino-leg-left::after,
+.dino-leg-right::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: -5px;
+  width: 28px;
+  height: 14px;
+  background: #fff8e1;
+  border-radius: 50%;
+}
+
+.dino-arm {
+  position: absolute;
+  width: 12px;
+  height: 34px;
+  left: 78px;
+  top: 108px;
+  background: #8bc34a;
+  border-radius: 8px;
+  transform: rotate(35deg);
+  transform-origin: top center;
+  z-index: 3;
+}
+
+.dino-arm::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: -3px;
+  width: 16px;
+  height: 12px;
+  background: #8bc34a;
+  border-radius: 50%;
+}
+
+.dino-neck {
+  position: absolute;
+  width: 35px;         
+  height: 30px;        
+  background-color: #689f38;
+  z-index: 1;
+  right: 78px;
+  top: 80px;
+  transform: rotate(45deg);
+}
+
+.dino-head {
+  position: absolute;
+  width: 72px;
+  height: 62px;
+  left: 100px;
+  top: 40px;
+  background: #8bc34a;
+  border-radius: 50%;
+  z-index: 4;
+}
+
+.dino-horn {
+  position: absolute;
+  width: 3px;
+  height: 16px;
+  background: #689f38;
+  border-radius: 2px;
+  top: -12px;
+}
+
+.dino-horn--1 { left: 24px; transform: rotate(-15deg); }
+.dino-horn--2 { left: 34px; transform: rotate(15deg); }
+
+.dino-eye {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: #ffffff;
+  border-radius: 50%;
+  top: 14px;
+}
+
+.dino-eye::after {
+  content: "";
+  position: absolute;
+  width: 9px;
+  height: 9px;
+  background: #212121;
+  border-radius: 50%;
+  top: 6px;
+  left: 6px;
+}
+
+.dino-eye--1 { left: 12px; }
+.dino-eye--2 { left: 34px; }
+
+.dino-mouth {
+  position: absolute;
+  width: 34px;
+  height: 16px;
+  left: 30px;
+  top: 40px;
+  background: #4e342e;
+  border-radius: 0 0 16px 16px;
+  z-index: 1;
+}
+
+.dino-tooth {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 6px solid #ffffff;
+  top: 40px;
+  z-index: 2;
+}
+
+.dino-tooth--1 { left: 34px; }
+.dino-tooth--2 { left: 50px; }
+
+
+
+
+
+
+
+
+
+body{
+    background-color:#C1BAFF;
+}
+
+
+.siteHeader {
+    background: #101010;
+    color: #fff;
+    position: sticky;
+    z-index: 100;
+    top: 0;
+}
+
+.headerContainer {
+    max-width: 1200px;         
+    margin: 0 auto;         
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 32px;         
+}
+
+.logo a {
+    display: inline-flex;
+    align-items: center;   
+    gap: 16px;              
+    text-decoration: none;  
+    color: #fff;           
+}
+.logoText {
+    display:flex;
+    flex-direction: column;
+    line-height: 1;
+}
+
+.line1{
+    font-size: 15px;
+    font-weight: bold;
+}
+.line2{
+    font-size: 15px;
+    font-weight: bold;
+}
+
+
+.logo img {
+    height: 60px;          
+    width: auto;          
+    display: block;
+}
+
+
+.menu ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.menu a {
+  color: #eee;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+.menu a:hover,
+.menu a.active {
+  color: #ffffff;
+  border-bottom: 2px solid #ffffff;
+}
+
+
