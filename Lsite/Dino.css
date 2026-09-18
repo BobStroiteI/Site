@@ -3,7 +3,7 @@
   position: relative;
   width: 200px;
   height: 200px;
-  margin: 0 auto;
+  margin: 10 auto;
   overflow: hidden;
   background: #ffffff;
 }
@@ -24,7 +24,7 @@
 .grass {
   position: absolute;
   width: 20px;
-  height: 40px;
+  height: 70px;
   bottom: 26px;
   border-radius: 100%;
   border-left: 3px solid #8bc34a;
@@ -62,7 +62,7 @@
   left: 30px;
   top: 88px;
   background: #8bc34a;
-border-radius: 50%;
+  border-radius: 50%;
   z-index: 2;
 }
 
@@ -74,6 +74,7 @@ border-radius: 50%;
   top: 108px;
   background: #dcedc8;
   border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0) 75%);
   z-index: 3;
 }
 
@@ -208,91 +209,7 @@ border-radius: 50%;
 
 .dino-tooth--1 { left: 34px; }
 .dino-tooth--2 { left: 50px; }
-
-
-
-
-
-
-
-
-
-body{
-    background-color:#C1BAFF;
-}
-
-
-.siteHeader {
-    background: #101010;
-    color: #fff;
-    position: sticky;
-    z-index: 100;
-    top: 0;
-}
-
-.headerContainer {
-    max-width: 1200px;         
-    margin: 0 auto;         
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 12px 32px;         
-}
-
-.logo a {
-    display: inline-flex;
-    align-items: center;   
-    gap: 16px;              
-    text-decoration: none;  
-    color: #fff;           
-}
-.logoText {
-    display:flex;
-    flex-direction: column;
-    line-height: 1;
-}
-
-.line1{
-    font-size: 15px;
-    font-weight: bold;
-}
-.line2{
-    font-size: 15px;
-    font-weight: bold;
-}
-
-
-.logo img {
-    height: 60px;          
-    width: auto;          
-    display: block;
-}
-
-
-.menu ul {
-  list-style: none;
-  display: flex;
-  gap: 30px;
-}
-
-.menu a {
-  color: #eee;
-  text-decoration: none;
-  font-size: 15px;
-}
-
-.menu a:hover,
-.menu a.active {
-  color: #ffffff;
-  border-bottom: 2px solid #ffffff;
-}
-
-
-
-
-
-
-
+.dino-tooth--3 { left: 80px; }
 
 
 
