@@ -1,0 +1,161 @@
+<html>
+    <head>
+        <title> Задание 3 </title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <link rel="stylesheet" type="text/css" href="Dino.css">
+        <link rel="stylesheet" type="text/css" href="../Style2.css">
+
+        <style>
+          .reel {
+            width:200px; height:200px;
+            position:relative;
+            overflow:hidden;
+            display:flex;
+            align-items:flex-end;
+            justify-content:flex-start;
+            border-radius:10px;
+            background:#e625bc;
+            box-shadow:0 4px 14px rgba(0,0,0,.25);
+            cursor:pointer;
+            transition:filter .5s ease;
+            margin:24px;
+          }
+          .reel img { display:block; pointer-events:none; }
+
+          
+          .prince-default {
+            position:absolute;
+            left:4px; bottom:0; height:190px; width:auto;
+            opacity:1; transition:opacity .25s ease;
+          }
+          .prince-animated {
+            position:absolute; left:0; bottom:0; height:190px; width:110px;
+            opacity:0; transition:opacity .25s ease;
+          }
+          .p-body {
+            position:absolute;
+            left:4px; bottom:0; height:186px; width:auto;
+          }
+          .p-head {
+            position:absolute;
+            left:45px; top:12px; height:34px; width:auto;
+            transform-origin:50% 85%;
+          }
+
+          .frog-wrap {
+            position:absolute;
+            right:14px; bottom:2px;
+            opacity:0;
+            transform:translateX(230px);   
+            transition:opacity .5s ease,
+                      transform 1s cubic-bezier(.25,.8,.35,1); 
+            pointer-events:none;
+            will-change:transform, opacity;
+          }
+
+          .reel:hover .frog-wrap {
+            opacity:1;
+            transform:translateX(0);      
+          }
+
+          .princess {
+            position:absolute;
+            right:8px; bottom:0; height:196px; width:auto;
+            opacity:0;
+            transform:scale(.3);
+            transform-origin:50% 100%;
+            pointer-events:none;
+          }
+
+
+
+          .question,
+          .princess-text {
+            position:absolute; top:10px; left:70%; transform:translateX(-50%);
+            font-size:13px; font-weight:bold; color:#2c2c2c;
+            background:rgba(255,255,255,.85); padding:2px 8px; border-radius:6px;
+            opacity:0; transition:opacity .25s ease; white-space:nowrap;
+            pointer-events:none;
+          }
+
+          @keyframes head-shake {
+            0%,100% { transform:rotate(0deg); }
+            25%     { transform:rotate(-10deg); }
+            75%     { transform:rotate(10deg); }
+          }
+          @keyframes frog-jump {
+            0%,100% { transform:translateY(0); }
+            50%     { transform:translateY(-9px); }
+          }
+          @keyframes princess-grow {
+            from { opacity:0; transform:scale(.3); }
+            to   { opacity:1; transform:scale(.8); }   
+          }
+
+  
+          
+          
+          .reel:hover .prince-default { opacity:0; }
+          .reel:hover .prince-animated { opacity:1; }
+          .reel:hover .p-head { animation:head-shake .5s ease-in-out infinite; }
+
+          .reel:hover .frog-wrap {
+            opacity:1;
+            transform:translateY(0) scale(1);
+          }
+          .reel:hover .frog { animation:frog-jump .55s ease-in-out infinite; }
+
+          .reel:hover .question { opacity:1; }
+
+
+          
+          .reel:active { filter:sepia(1); }
+          .reel:active .frog-wrap { opacity:0; transform:translateY(16px) scale(.5); }
+          .reel:active .frog { animation:none; }
+          .reel:active .question { opacity:0; }
+          .reel:active .princess { animation:princess-grow .5s ease forwards; }
+          .reel:active .princess-text { opacity:1; }
+        </style>
+    </head>
+    <body>
+        <header class="siteHeader">
+            <div class="headerContainer">
+                <div class="logo">
+                    <a href="../main.html">
+                        <img src="../images/logo.jpg" alt="логотип">
+                        <div class="logoText">
+                            <span class="line1">だってばよ</span>
+                        </div>
+                    </a>
+                </div>
+
+                <nav class="menu">
+                    <ul>
+                        <li><a href="../main.html">Главная</a></li>
+                        <li><a href="Animation.html" class="active">Анимация</a></li>
+                        <li><a href="#">...</a></li>
+                        <li><a href="Content.html">Рисунок</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <div class="reel">
+            <img class="prince-default" src="../images/prince1.png" alt="Принц">
+
+            <div class="prince-animated">
+                <img class="p-body" src="../images/prince2.png" alt="принц (тело)">
+                <img class="p-head" src="../images/prince3.png" alt="принц (голова)">
+            </div>
+
+            <div class="frog-wrap">
+                <img class="frog" src="../images/frog1.png" alt="лягушка">
+            </div>
+
+            <img class="princess" src="../images/princess.png" alt="принцесса">
+
+            <div class="question">Ты кто?</div>
+            <div class="princess-text">Я принцесса</div>
+        </div>
+    </body>
+</html>
