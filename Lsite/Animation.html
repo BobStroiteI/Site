@@ -94,9 +94,10 @@
 
   
           
-          
-          .reel:hover .prince-default { opacity:0; }
-          .reel:hover .prince-animated { opacity:1; }
+      
+
+          .prince-animated:hover { opacity:1; }
+          .prince-animated:hover + .prince-default {opacity: 0;}
           .reel:hover .p-head { animation:head-shake .5s ease-in-out infinite; }
 
           .reel:hover .frog-wrap {
@@ -141,12 +142,12 @@
         </header>
 
         <div class="reel">
-            <img class="prince-default" src="../images/prince1.png" alt="Принц">
 
             <div class="prince-animated">
                 <img class="p-body" src="../images/prince2.png" alt="принц (тело)">
                 <img class="p-head" src="../images/prince3.png" alt="принц (голова)">
             </div>
+            <img class="prince-default" src="../images/prince1.png" alt="Принц">
 
             <div class="frog-wrap">
                 <img class="frog" src="../images/frog1.png" alt="лягушка">
