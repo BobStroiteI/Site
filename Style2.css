@@ -8,86 +8,109 @@
   src: url('fonts/Fibre.otf') format('truetype'); 
 }
 
-
-
-#Вступление{
-    color: #000000;
-    font-family: 'CaptionFont', sans-serif;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
+html {
+  overflow-x: hidden;
+}
 
-body{
-    background-color:#C1BAFF;
+#Вступление {
+  color: #000000;
+  font-family: 'CaptionFont', sans-serif;
+  font-size: 24px;
+  line-height: 1.4;
+  max-width: 1200px;
+  margin: 40px auto 24px;
+  padding: 0 24px;
 }
-p{
-    color:#000000;
-    font-size: 30;
-    margin: 50 auto 40 20;
-}
-#MainText p{
-    color: #fd0000;
-    
 
+body {
+  margin: 0;
+  background-color: #C1BAFF;
 }
+
+p {
+  color: #000000;
+  font-size: 30px;
+  margin: 50px auto 40px 20px;
+}
+
+#MainText p {
+  color: #fd0000;
+}
+
 #MainText {
-    background-color:#2cf803;
+  background-color: #2cf803;
 }
 
-.titles{
-    color:#faea04;
+.titles {
+  color: #faea04;
 }
-
 
 .siteHeader {
-    background: #101010;
-    color: #fff;
-    position: sticky;
-    z-index: 100;
-    top: 0;
+  background: #101010;
+  color: #fff;
+  position: sticky;
+  z-index: 100;
+  top: 0;
 }
 
 .headerContainer {
-    max-width: 1200px;         
-    margin: 0 auto;         
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 12px 32px;         
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 32px;
+}
+
+.logo {
+  min-width: 0;
 }
 
 .logo a {
-    display: inline-flex;
-    align-items: center;   
-    gap: 16px;              
-    text-decoration: none;  
-    color: #fff;           
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  text-decoration: none;
+  color: #fff;
 }
+
 .logoText {
-    display:flex;
-    flex-direction: column;
-    line-height: 1;
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
 }
 
-.line1{
-    font-size: 35px;
-    font-weight: bold;
-    margin: 0 auto -10px 0;
-    font-family: 'HeaderFont', sans-serif;
+.line1 {
+  font-size: 35px;
+  font-weight: bold;
+  margin: 0 auto -10px 0;
+  font-family: 'HeaderFont', sans-serif;
 }
-
-
 
 .logo img {
-    height:70px;          
-    width: auto;          
-    display: block;
+  height: 70px;
+  width: auto;
+  display: block;
 }
 
+/* Кнопка меню спрятана, пока хватает ширины шапки. */
+.menuToggle {
+  display: none;
+}
 
 .menu ul {
   list-style: none;
   display: flex;
   gap: 30px;
+  margin: 0;
+  padding: 0;
   font-family: 'CaptionFont', sans-serif;
 }
 
@@ -103,40 +126,187 @@ p{
   border-bottom: 2px solid #ffffff;
 }
 
-
-.Gallery{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-    justify-content: center;
-    max-width: 1900px;
-    margin: 100px auto 40px 20px;
-
+.Gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 40px auto 48px;
+  padding: 0 24px;
 }
 
-.galleryItem {
-    width: 1800px;       
-    overflow: hidden;
+.GalleryItem {
+  width: 100%;
+  overflow: hidden;
 }
 
-.galleryItem img {
-    float: left;
-    width: 600px;           
-    margin: 0 25px 15px 0;  
-    border-radius: 10px;
+.GalleryItem img {
+  float: left;
+  width: min(600px, 46%);
+  height: auto;
+  margin: 0 25px 15px 0;
+  border-radius: 10px;
 }
 
 .caption {
-    margin-top: 12px;
-    font-size: 23px;
-    color: #333;
-    
+  margin-top: 12px;
+  font-size: 23px;
+  color: #333;
 }
 
-.caption p{
+.caption p {
+  margin: 0 0 12px 0;
+  font-size: 30px;
+  line-height: 1.2;
+  color: #000000;
+  font-family: 'CaptionFont', sans-serif;
+}
+
+.siteFooter {
+  padding: 8px 24px 32px;
+}
+
+.siteFooter p {
+  margin: 0;
+  text-align: center;
+  font-size: 18px;
+  font-family: 'CaptionFont', sans-serif;
+}
+
+/*
+  Desktop-first: базовые стили выше — для широкого экрана.
+  Увеличение масштаба в браузере уменьшает ширину окна в CSS-пикселях,
+  поэтому то же условие срабатывает и на телефоне, и при приближении на ПК.
+  1024px — граница десктопа из разбора mobile-first / desktop-first.
+*/
+@media (width < 1024px) {
+  .headerContainer:has(.menuToggle) {
+    position: relative;
+  }
+
+  .headerContainer:has(.menuToggle) .menuToggle {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    margin-left: auto;
+    padding: 12px 10px;
+    border: 1px solid #ffffff;
+    border-radius: 8px;
+    background: transparent;
+    color: inherit;
+    cursor: pointer;
+  }
+
+  .menuToggleBar {
+    display: block;
+    height: 2px;
+    background: #ffffff;
+    border-radius: 2px;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+
+  .menuToggleText {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  .menuToggle:focus-visible {
+    outline: 2px solid #ffffff;
+    outline-offset: 3px;
+  }
+
+  .menuToggle.is-open .menuToggleBar:nth-of-type(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  .menuToggle.is-open .menuToggleBar:nth-of-type(2) {
+    opacity: 0;
+  }
+
+  .menuToggle.is-open .menuToggleBar:nth-of-type(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  .headerContainer:has(.menuToggle) .menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 16px;
+    left: 16px;
+    background: #101010;
+    border: 1px solid #333333;
+    border-radius: 0 0 10px 10px;
+    padding: 8px 0 12px;
+  }
+
+  .headerContainer:has(.menuToggle) .menu.is-open {
+    display: block;
+  }
+
+  .headerContainer:has(.menuToggle) .menu ul {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .headerContainer:has(.menuToggle) .menu a {
+    display: block;
+    padding: 14px 18px;
+  }
+
+  .GalleryItem img {
+    float: none;
+    display: block;
+    width: 100%;
+    max-width: 640px;
+    margin: 0 0 16px 0;
+  }
+}
+
+/* Телефон: крупнее зоны нажатия уже заданы в меню, текст и логотип компактнее. */
+@media (width < 640px) {
+  .headerContainer {
+    padding: 10px 12px;
+  }
+
+  .logo img {
+    height: 52px;
+  }
+
+  .line1 {
+    font-size: 26px;
+  }
+
+  #Вступление {
+    font-size: 18px;
+    margin-top: 24px;
+    padding: 0 16px;
+  }
+
+  p {
+    font-size: 18px;
+    margin: 20px 16px;
+  }
+
+  .caption p {
+    font-size: 18px;
     margin: 0 0 12px 0;
-    font-size: 30px;
-    line-height: 1.2;
-    color: #000000;
-    font-family: 'CaptionFont', sans-serif;
+  }
+
+  .Gallery {
+    gap: 28px;
+    margin-top: 24px;
+    padding: 0 16px;
+  }
 }

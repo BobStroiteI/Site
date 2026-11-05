@@ -1,7 +1,8 @@
 <html>
     <head>
         <title> Задание 1 </title>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="Dino.css">
         <link rel="stylesheet" type="text/css" href="../Style2.css">
     </head>
@@ -17,7 +18,14 @@
                     </a>
                 </div>
 
-                <nav class="menu">
+                <button type="button" class="menuToggle" aria-expanded="false" aria-controls="siteMenu">
+                    <span class="menuToggleBar"></span>
+                    <span class="menuToggleBar"></span>
+                    <span class="menuToggleBar"></span>
+                    <span class="menuToggleText">Меню</span>
+                </button>
+
+                <nav class="menu" id="siteMenu">
                     <ul>
                         <li><a href="../index.html">Главная</a></li>
                         <li><a href="../Lsite/Animation.html">Анимация</a></li>
@@ -72,5 +80,6 @@
 
                 
             </main>
+    <script src="../menu.js"></script>
     </body>
 </html>

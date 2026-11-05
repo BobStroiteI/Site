@@ -1,7 +1,9 @@
-<html>
+<!DOCTYPE html>
+<html lang="ru">
         <head>
             <title> Сайт </title>
-            <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <link rel="stylesheet" type="text/css" href="Style2.css">
         </head>
         
@@ -18,7 +20,14 @@
                         </a>
                     </div>
 
-                    <nav class="menu">
+                    <button type="button" class="menuToggle" aria-expanded="false" aria-controls="siteMenu">
+                        <span class="menuToggleBar"></span>
+                        <span class="menuToggleBar"></span>
+                        <span class="menuToggleBar"></span>
+                        <span class="menuToggleText">Меню</span>
+                    </button>
+
+                    <nav class="menu" id="siteMenu">
                         <ul>
                             <li><a href="index.html" class="active">Главная</a></li>
                             <li><a href="Lsite/Animation.html">Анимация</a></li>
@@ -56,22 +65,22 @@
                 </div>
 
                 <div class="GalleryItem">
-                    <img src="images/GarrysModeRofl.jpg"
+                    <img src="images/GarrysModeRofl.jpg" alt="Garry's Mod">
                     <p class="caption">   </p>
                 </div>              
 
                 <div class="GalleryItem">
-                    <img src="images/ETS2DTP.jpg"
+                    <img src="images/ETS2DTP.jpg" alt="Euro Truck Simulator 2">
                     <p class="caption">   </p>
                 </div>
 
                 <div class="GalleryItem">
-                    <img src="images/"
+                    <img src="images/" alt="">
                     <p class="caption">   </p>
                 </div>
 
                 <div class="GalleryItem">
-                    <img src="images/"
+                    <img src="images/" alt="">
                     <p class="caption">   </p>
                 </div>
             </div>
@@ -80,8 +89,9 @@
                 <div class="footerContainer">
                     <p>© 2026 Даттебаё. Все права защищены.</p>
                 </div>
+            </footer>
 
-
+        <script src="menu.js"></script>
         </body>
         
 </html>

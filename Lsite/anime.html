@@ -1,6 +1,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Даттебайо</title>
         <link rel="stylesheet" href="../Style2.css">   
     </head>
@@ -17,7 +18,14 @@
                     </a>
                 </div>
 
-                <nav class="menu">
+                <button type="button" class="menuToggle" aria-expanded="false" aria-controls="siteMenu">
+                    <span class="menuToggleBar"></span>
+                    <span class="menuToggleBar"></span>
+                    <span class="menuToggleBar"></span>
+                    <span class="menuToggleText">Меню</span>
+                </button>
+
+                <nav class="menu" id="siteMenu">
                     <ul>
                         <li><a href="../main.html">Главная</a></li>
                         <li><a href="#">...</a></li>
@@ -33,6 +41,6 @@
                 <source src="../files/Naruto.mp4" type="video/mp4">
             </video>
         </div>
-
+    <script src="../menu.js"></script>
     </body>
 </html>
