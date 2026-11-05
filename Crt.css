@@ -1,0 +1,207 @@
+.crt-logo {
+  --s: 0.3;
+  width: calc(200px * var(--s));
+  height: calc(200px * var(--s));
+  display: inline-block;
+}
+
+.crt,
+.crt * {
+  box-sizing: border-box;
+}
+
+.crt {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  transform: scale(var(--s));
+  transform-origin: 0 0;
+}
+
+/* Корпус */
+.crt-case {
+  position: absolute;
+  left: 8px;
+  top: 10px;
+  width: 184px;
+  height: 156px;
+  background: #e9e2cb;
+  border: 2px solid #8c8566;
+  border-radius: 14px;
+  box-shadow: inset 0 -6px 0 #d2c9ab;
+  z-index: 2;
+}
+
+/* Экран */
+.crt-screen {
+  position: absolute;
+  left: 28px;
+  top: 28px;
+  width: 144px;
+  height: 100px;
+  background: #1b262c;
+  border-radius: 18px / 14px;
+  box-shadow: 0 0 0 3px #b5ac8e, 0 0 0 5px #8c8566;
+  overflow: hidden;
+  z-index: 3;
+}
+
+/* Помехи */
+.crt-glitch {
+  position: absolute;
+}
+
+.crt-glitch--1 { top: 18px; left: 0;    width: 70px; height: 6px; background: #eceff1; }
+.crt-glitch--2 { top: 34px; left: 50px; width: 94px; height: 3px; background: #4dd0e1; }
+.crt-glitch--3 { top: 44px; left: 0;    width: 30px; height: 3px; background: #ffffff; }
+.crt-glitch--4 { top: 56px; left: 14px; width: 60px; height: 8px; background: #ffffff; }
+.crt-glitch--5 { top: 76px; left: 70px; width: 50px; height: 4px; background: #f06292; }
+
+.crt-noise {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 0.12) 0 2px,
+    transparent 2px 6px
+  );
+  z-index: 2;
+}
+
+
+.crt-btn {
+  position: absolute;
+  top: 144px;
+  width: 9px;
+  height: 5px;
+  background: #b5ac8e;
+  border-radius: 2px;
+  z-index: 4;
+}
+
+.crt-btn--1 { left: 30px; }
+.crt-btn--2 { left: 44px; }
+.crt-btn--3 { left: 58px; }
+
+.crt-led {
+  position: absolute;
+  left: 134px;
+  top: 143px;
+  width: 7px;
+  height: 7px;
+  background: #66bb6a;
+  border-radius: 50%;
+  z-index: 4;
+}
+
+.crt-power {
+  position: absolute;
+  left: 150px;
+  top: 138px;
+  width: 16px;
+  height: 16px;
+  background: #d9d0b4;
+  border: 2px solid #8c8566;
+  border-radius: 50%;
+  z-index: 4;
+}
+
+
+.crt-neck {
+  position: absolute;
+  left: 72px;
+  top: 164px;
+  width: 56px;
+  height: 12px;
+  background: #cfc6a8;
+  border: 2px solid #8c8566;
+  border-top: none;
+  z-index: 1;
+}
+
+.crt-base {
+  position: absolute;
+  left: 48px;
+  top: 174px;
+  width: 104px;
+  height: 10px;
+  background: #bdb59a;
+  border: 2px solid #8c8566;
+  border-radius: 6px;
+  z-index: 1;
+}
+
+
+.crt-sticker {
+  position: absolute;
+  z-index: 5;
+}
+
+.crt-sticker--circle-teal {
+  left: 40px;
+  top: 14px;
+  width: 10px;
+  height: 10px;
+  background: #26a69a;
+  border-radius: 50%;
+}
+
+.crt-sticker--triangle {
+  left: 120px;
+  top: 14px;
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 10px solid #ff7043;
+}
+
+.crt-sticker--circle-pink {
+  left: 13px;
+  top: 62px;
+  width: 11px;
+  height: 11px;
+  background: #ec407a;
+  border-radius: 50%;
+}
+
+.crt-sticker--square {
+  left: 13px;
+  top: 88px;
+  width: 11px;
+  height: 11px;
+  background: #42a5f5;
+  border-radius: 2px;
+  transform: rotate(15deg);
+}
+
+.crt-sticker--star {
+  left: 175px;
+  top: 41px;
+  width: 14px;
+  height: 16px;
+}
+
+.crt-sticker--star::before,
+.crt-sticker--star::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+}
+
+.crt-sticker--star::before {
+  top: 0;
+  border-bottom: 12px solid #fdd835;
+}
+
+.crt-sticker--star::after {
+  top: 4px;
+  border-top: 12px solid #fdd835;
+}

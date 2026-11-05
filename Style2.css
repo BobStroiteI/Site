@@ -182,7 +182,15 @@ p {
 }
 
 
-@media (width < 1024px) {
+
+@media (hover: none), (pointer: coarse) {
+  body {
+    background-attachment: scroll;
+  }
+}
+
+
+@media (max-width: 1023.98px) {
   .headerContainer:has(.menuToggle) {
     position: relative;
   }
@@ -198,7 +206,7 @@ p {
     height: 48px;
     margin-left: auto;
     padding: 12px 10px;
-    border: 1px solid #ffffff;
+    border: 1px solid #000000;
     border-radius: 8px;
     background: transparent;
     color: inherit;
@@ -208,7 +216,7 @@ p {
   .menuToggleBar {
     display: block;
     height: 2px;
-    background: #ffffff;
+    background: #000000;
     border-radius: 2px;
     transition: transform 0.2s ease, opacity 0.2s ease;
   }
@@ -226,7 +234,7 @@ p {
   }
 
   .menuToggle:focus-visible {
-    outline: 2px solid #ffffff;
+    outline: 2px solid #000000;
     outline-offset: 3px;
   }
 
@@ -248,7 +256,7 @@ p {
     top: 100%;
     right: 16px;
     left: 16px;
-    background: #101010;
+    background: #ffb3fe;
     border: 1px solid #333333;
     border-radius: 0 0 10px 10px;
     padding: 8px 0 12px;
@@ -277,7 +285,7 @@ p {
   }
 }
 
-@media (width < 640px) {
+@media (max-width: 639.98px) {
   .headerContainer {
     padding: 10px 12px;
   }

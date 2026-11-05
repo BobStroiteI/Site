@@ -4,31 +4,33 @@
 
 
 
-
-
-html, body, * {
-  cursor: url('../img/cursor/default.png') 0 0, default;
-}
-a, button {
-  cursor: url('../img/cursor/pointer.png') 0 0, pointer;
+html {
+  cursor: url('img/cursor/default.png') 0 0, default;
 }
 
-
-
+a,
+button,
+[role="button"] {
+  cursor: url('/img/cursor/pointer.png') 0 0, pointer;
+}
 
 
 .layout {
   display: grid;
-  grid-template-columns: 1fr minmax(320px, 1100px) 1fr;
+  grid-template-columns: 1fr minmax(0, 1100px) 1fr;
   gap: 16px;
-  padding: 20px 0;          
+  padding: 20px 0;
   padding-bottom: 40px;
   align-items: start;
-  width: 100%;             
-  max-width: none;          
+  width: 100%;
+  max-width: none;
   margin: 0;
   position: relative;
   z-index: 1;
+}
+
+.content {
+  min-width: 0;
 }
 
 
@@ -38,13 +40,12 @@ a, button {
   height: 100%;
   overflow: hidden;
 
-
-  border: 16px solid #ffb3fe; 
-
+  border: 16px solid #ffb3fe;
 }
 
+
 .side-left {
-  background-image: url('img/left-bg.jpg'); 
+  background-image: url('img/left-bg.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -52,14 +53,14 @@ a, button {
 }
 
 .side-right {
-  background-image: url('img/right-bg.jpg'); 
+  background-image: url('img/right-bg.jpg');
   background-size: cover;
   background-position: left center;
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
 
-/* Случайные картинки */
+
 .side img.random-img {
   position: absolute;
   width: 40px;
@@ -78,8 +79,8 @@ a, button {
 
 .Gallery {
   position: relative;
-  z-index: 5; 
-  border: 16px solid #ffb3fe; 
+  z-index: 5;
+  border: 16px solid #ffb3fe;
   background-color: rgba(255, 179, 254, 0.30);
 }
 
@@ -89,12 +90,32 @@ a, button {
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: fill;          
-  pointer-events: none;      
+  object-fit: fill;
+  pointer-events: none;
   z-index: 6;
 }
 
 .GalleryItem {
   position: relative;
   z-index: 7;
+}
+
+
+
+@media (hover: none), (pointer: coarse) {
+  .side-left,
+  .side-right {
+    background-attachment: scroll;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+  }
+
+  .side {
+    display: none;
+  }
 }
