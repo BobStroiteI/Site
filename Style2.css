@@ -29,9 +29,18 @@ html {
 }
 
 body {
-  margin: 0;
-  background-color: #C1BAFF;
+  background-image: url('images/back3.jpg'); 
+  /* 1. Меняем no-repeat на repeat, чтобы включить замостительную сетку */
+  background-repeat: repeat; 
+  
+  /* 2. УДАЛЯЕМ или комментируем background-size: cover; */
+  /* background-size: auto; (или просто удалите эту строчку) */
+
+  /* Эти свойства можно оставить по желанию: */
+  background-position: top left; /* Лучше начинать плитку с верхнего левого угла */
+  background-attachment: fixed;  /* Плитка останется неподвижной при скролле (эффектно) */
 }
+
 
 p {
   color: #000000;
@@ -52,7 +61,7 @@ p {
 }
 
 .siteHeader {
-  background: #101010;
+  background-color: rgba(255, 179, 254, 0.95);
   color: #fff;
   position: sticky;
   z-index: 100;
@@ -100,7 +109,7 @@ p {
   display: block;
 }
 
-/* Кнопка меню спрятана, пока хватает ширины шапки. */
+
 .menuToggle {
   display: none;
 }
@@ -173,12 +182,7 @@ p {
   font-family: 'CaptionFont', sans-serif;
 }
 
-/*
-  Desktop-first: базовые стили выше — для широкого экрана.
-  Увеличение масштаба в браузере уменьшает ширину окна в CSS-пикселях,
-  поэтому то же условие срабатывает и на телефоне, и при приближении на ПК.
-  1024px — граница десктопа из разбора mobile-first / desktop-first.
-*/
+
 @media (width < 1024px) {
   .headerContainer:has(.menuToggle) {
     position: relative;
@@ -274,7 +278,6 @@ p {
   }
 }
 
-/* Телефон: крупнее зоны нажатия уже заданы в меню, текст и логотип компактнее. */
 @media (width < 640px) {
   .headerContainer {
     padding: 10px 12px;
