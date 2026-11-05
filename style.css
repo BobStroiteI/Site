@@ -6,9 +6,6 @@
 
 
 
-
-
-/* Курсор */
 html, body, * {
   cursor: url('../img/cursor/default.png') 0 0, default;
 }
@@ -33,7 +30,8 @@ a, button {
   position: relative;
   z-index: 1;
 }
-/* Боковые колонки — параллакс на всю высоту контента */
+
+
 .side {
   position: relative;
   min-height: 100%;
@@ -46,7 +44,7 @@ a, button {
 }
 
 .side-left {
-  background-image: url('img/left-bg.jpg');  /* своё изображение слева */
+  background-image: url('img/left-bg.jpg'); 
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -54,7 +52,7 @@ a, button {
 }
 
 .side-right {
-  background-image: url('img/right-bg.jpg'); /* своё изображение справа */
+  background-image: url('img/right-bg.jpg'); 
   background-size: cover;
   background-position: left center;
   background-repeat: no-repeat;
@@ -77,10 +75,10 @@ a, button {
   z-index: 10;
 }
 
-/* ===== Рамка галереи ===== */
+
 .Gallery {
   position: relative;
-  z-index: 5; /* выше параллакса */
+  z-index: 5; 
   border: 16px solid #ffb3fe; 
   background-color: rgba(255, 179, 254, 0.30);
 }
@@ -96,7 +94,6 @@ a, button {
   z-index: 6;
 }
 
-/* Контент галереи должен быть выше рамки, если рамка с прозрачным центром */
 .GalleryItem {
   position: relative;
   z-index: 7;
