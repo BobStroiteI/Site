@@ -51,6 +51,13 @@ let score = 0;
 let locked = false;
 let finished = false;
 
+
+console.log(queue);
+
+
+
+
+
 function shuffle(arr) {
     const a = arr.slice();
     for (let i = a.length - 1; i > 0; i--) {
@@ -96,6 +103,7 @@ function showNext() {
             onAnswer(q, col, block, marker, answersBox);
         });
         answersBox.append(block);
+
     });
 
     col.append(qBlock, answersBox);
