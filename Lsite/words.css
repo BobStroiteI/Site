@@ -1,0 +1,85 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+
+.wordsMain {
+    padding: 20px;
+}
+
+.TargetBlock {
+    border: 2px solid blue;
+    min-height: 50px;
+    padding: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: flex-start;
+    background-color: #fafafa;
+}
+
+.BottomRow {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.SourceBlock {
+    border: 2px solid black;
+    width: 180px;
+    min-height: 250px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
+    background-color: #fafafa;
+}
+
+.RightPanel {
+    border: 2px solid black;
+    flex: 1;
+    min-height: 250px;
+    padding: 10px;
+    background-color: #fafafa;
+}
+
+.InputRow {
+    display: flex;
+    gap: 10px;
+}
+
+.InputRow input {
+    flex: 1;
+    padding: 6px;
+    font-size: 16px;
+}
+
+.InputRow button {
+    padding: 6px 16px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.ResultBlock {
+    border: 2px solid red;
+    min-height: 40px;
+    padding: 10px;
+    margin-top: 15px;
+    font-size: 20px;
+    background-color: #fafafa;
+}
+
+.WordItem {
+    padding: 6px 12px;
+    cursor: grab;
+    user-select: none;
+    font-size: 16px;
+    
+}
+
+.TargetItem {
+    background-color: #bbbbbb;
+}
